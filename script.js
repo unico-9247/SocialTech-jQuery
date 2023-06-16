@@ -17,13 +17,13 @@ $(function() {
   $('.carousel').slick({
     autoplay: true,
     dots: true,
-    infinate: true,
+    infinite: true,
     autoplaySpeed: 5000,
     arrows: false
   });
 
   // ajaxでSTATIC FORMSにデータを送信
-  $('#sabmit').on('click', function(event) {
+  $('#submit').on('click', function(event) {
     // formタグによる送信を拒否
     event.preventDefault();
 
@@ -55,7 +55,7 @@ $(function() {
     }
   });
 
-  // フォーカスが外れたとき（blue）にフォームの入力チェックをする
+  // フォーカスが外れたとき（blur）にフォームの入力チェックをする
   $('#name').blur(function() {
     inputCheck();
   });
@@ -81,7 +81,7 @@ $(function() {
     let result;
 
     // エラーメッセージのテキスト
-    let messsage = '';
+    let message = '';
 
     // エラーがなければfalse、エラーがあればtrue
     let error = false;
@@ -91,7 +91,7 @@ $(function() {
       // エラーあり
       $('#name').css('background-color', '#f79999');
       error = true;
-      messsage += 'お名前を入力してください。';
+      message += 'お名前を入力してください。';
     } else {
       // エラーなし
       $('#name').css('background-color', '#fafafa');
@@ -102,7 +102,7 @@ $(function() {
       // エラーあり
       $('#furigana').css('background-color', '#f79999');
       error = true;
-      messsage += 'フリガナを入力してください。';
+      message += 'フリガナを入力してください。';
     } else {
       // エラーなし
       $('#furigana').css('background-color', '#fafafa');
@@ -113,7 +113,7 @@ $(function() {
       // エラーあり
       $('#message').css('background-color', '#f79999');
       error = true;
-      messsage += 'お問い合わせ内容を入力してください。';
+      message += 'お問い合わせ内容を入力してください。';
     } else {
       // エラーなし
       $('#message').css('background-color', '#fafafa');
@@ -126,7 +126,7 @@ $(function() {
       // エラーあり
       $('#email').css('background-color', '#f79999');
       error = true;
-      messsage += 'メールアドレスが未記入、または「@」「.」が含まれていません。';
+      message += 'メールアドレスが未記入、または「@」「.」が含まれていません。';
     } else {
       // エラーなし
       $('#email').css('background-color', '#fafafa');
@@ -138,7 +138,7 @@ $(function() {
       // エラーあり
       $('#tel').css('background-color', '#f79999');
       error = true;
-      messsage += '電話番号に「-」が含まれていません。';
+      message += '電話番号に「-」が含まれていません。';
     } else {
       // エラーなし
       $('#tel').css('background-color', '#fafafa');
@@ -147,7 +147,7 @@ $(function() {
     // 個人情報のチェックボックスのチェック
     if($('#agree').prop('checked') == false) {
       error = true;
-      messsage += '個人情報の取り扱いについてご同意いただける場合は、チェックボックスにチェックしてください。'
+      message += '個人情報の取り扱いについてご同意いただける場合は、チェックボックスにチェックしてください。'
     }
 
     // エラーの有無で送信ボタンを切り替え
