@@ -43,7 +43,7 @@ $(function() {
         dataType: 'json',
         data: $('#form').serialize(),
         success: function(result) {
-          alert('お問い合わせを送信しました')
+          alert('お問い合わせを送信しました。')
         },
         error: function (xhr, resp, text) {
           alert('お問い合わせ内容を送信できませんでした。')
@@ -71,7 +71,7 @@ $(function() {
   $('#message').blur(function() {
     inputCheck();
   });
-  $('#agree').blur(function() {
+  $('#agree').click(function() {
     inputCheck();
   });
 
@@ -160,7 +160,7 @@ $(function() {
     // オブジェクトでエラー判定とメッセージを返す
     result = {
       error: error,
-      message: messsage
+      message: message
     }
 
     // 戻り値としてエラーがあるかどうかを返す
